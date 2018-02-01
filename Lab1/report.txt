@@ -1,0 +1,8 @@
+Ethan Anderson - etmander
+
+
+1. I accomplished the goals of the lab, everything worked as planned and expected with no issues.
+
+2. There were no difficulties to this lab as I've used git and ssh extensively previously.
+
+3. I learned while creating my icebreaker program about the defult included ACII color codes for terminal output in C. 

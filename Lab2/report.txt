@@ -1,0 +1,7 @@
+1. Ethan anderson (etmander) and Seth Baugh (sebaugh).
+
+2. We managed to complete this lab at the last minute, due to a few formatting difficulties that arose with dump.c. Initially, my approach to mywc was flawed in that I couldnt figure out how to pass args through the terminal. Poly and gdb went smoothly until the last bit with the formatting, but in the end everything was working. 
+
+3. My difficulties in mywc.c were actually pretty easily solved. I found I a cidentially didnt set up main to accept an array, so when I tried to pass a file to the program, I ended up only passing the text in the terminal arg. gdb was easy enough to figure out with the help of the help command, and I was able to breeze through that section. Initially with poly, everything was going smoothly. The entire section was essentially just formatting printf statements. However, I realized that I was printing some data types everyline and not accounting for the gaps in the mem space. After solving this with a switch statement regulated by a mod operator, I was able to only print good outputs. I also had to clean char outputs, which was just done by aa simple check of the ASCII int. 
+
+4. I learned how to accept argumentss in c from the terminal. I never messed around much with user inputs in c, at least regarding variables, so this was neat to learn. I'm sure this will come in handy many times in the future.  
