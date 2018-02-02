@@ -45,11 +45,29 @@ int main(void) {
   setvbuf(stdout, NULL, _IONBF, 0);
   setvbuf(stderr, NULL, _IONBF, 0);
   
-  while (1){
-    //putstring("hello");
-    putchar(getchar());
-    //printf("Hello World!"); 
- }
+     
+  int newl = 0;
+  int numc = 0;
+  int words = 0;
+
+  int c;
+	
+  while ((c = getchar()) != 0x1b){
+    
+    numc++;
+    
+    if(c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32){
+    
+	words++;
+	if(c == 10){
+		newl++;
+	}
+
+    }	
+  }
+
+  printf("lines: %d Words: %d Characters: %d\n", newl, words, numc);
+
 }
 
 #ifdef USE_FULL_ASSERT
