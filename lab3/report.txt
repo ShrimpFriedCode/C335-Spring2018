@@ -1,0 +1,14 @@
+Ethan Anderson (etmander)
+1/25/18
+
+1. Clock speed of 24 - 72 MHz, 8K bytes of SRAM and 128K bytes of flash.
+
+2. GPIO stands for General-purpose input/output
+
+3. (Question disregarded per lab instructions)
+
+4. The two green LEDs are on port E, pin numbers 11 and 15.
+
+5. The public attributes of the GPIO_InitTypeDef Struct Reference are: GPIO_Pin, GPIO_Mode, GPIO_Speed, GPIO_OType, and GPIO_PuPd. 
+
+6. I initially had trouble figuring out how to read input from the user button. The documentation made it seem that it returned an ENUM, but by sheer luck and trial and error I discovered that it returned as a boolean, which made things go over a lot more smoothly. Surprisingly enough, after this issue I was able to fly through the rest of the lab as I had spent considerable time reading the documentation trying to troubleshoot the user button.
