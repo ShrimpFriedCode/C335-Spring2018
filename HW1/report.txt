@@ -1,0 +1,7 @@
+Ethan Anderson (etmander)
+1. Address of state: 0x12fe8, size is 4 bytes
+2. Address of state_counter: 0x12fec, size is 4 bytes
+3. Address of stop_light(): 0x8af8, size is 140 bytes
+4. Address of inc(): 0x8ba0, size is 2 bytes
+5. largest function is stop_light()
+6. HW1.elf is 60307 bytes
