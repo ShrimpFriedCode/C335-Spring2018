@@ -47,7 +47,7 @@ int main(void) {
   
   while (1){
     //putstring("hello");
-    putchar(getchar());
+    putchar('a');
     //printf("Hello World!"); 
  }
 }
