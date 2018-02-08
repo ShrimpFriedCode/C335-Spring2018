@@ -1,29 +1,4 @@
-/* main.c --- 
- * 
- * Filename: main.c
- * Description: 
- * Author: 
- * Maintainer: 
- * Created: Thu Jan 10 11:23:43 2013
- * Last-Updated: 
- *           By: 
- *     Update #: 0
- * Keywords: 
- * Compatibility: 
- * 
- */
-
-/* Commentary: 
- * 
- * 
- * 
- */
-
-/* Change log:
- * 
- * 
- */
-/* Code: */
+//Ethan Anderson (etmander) 2/8/18
 
 #include <f3d_uart.h>
 #include <stdio.h>
@@ -40,32 +15,32 @@ void delay(void) {
 
 int main(void) {
   f3d_uart_init();
-
+  //init and stop I/O buffing
   setvbuf(stdin, NULL, _IONBF, 0);
   setvbuf(stdout, NULL, _IONBF, 0);
   setvbuf(stderr, NULL, _IONBF, 0);
   
-     
+  //counter vars
   int newl = 0;
   int numc = 0;
   int words = 0;
 
   int c;
-	
+  //while not eof
   while ((c = getchar()) != 0x1b){
-    
+    //increase number of chars 
     numc++;
-    
+    //if whitespace
     if(c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32){
-    
+    	//increase word count
 	words++;
-	if(c == 10){
-		newl++;
+	if(c == 10){//if new line 
+		newl++;//increase count
 	}
 
     }	
   }
-
+  //print counter vars
   printf("lines: %d Words: %d Characters: %d\n", newl, words, numc);
 
 }
@@ -78,4 +53,3 @@ void assert_failed(uint8_t* file, uint32_t line) {
 }
 #endif
 
-/* main.c ends here */
