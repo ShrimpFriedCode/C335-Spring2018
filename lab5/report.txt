@@ -1,0 +1,16 @@
+Ethan Anderson (etmander)
+
+1. The CS pin tells a slave device when data is being transfered.
+
+2. We set it high to signal the end of transmission. Other functions that set CS high are f3d_gyro_read and f3d_gyro_write.
+
+3. Y ou would connect all slaves to the master, wiring each slave's SCK,MOSI,MISO, and CS to the master. To communicate with a select slave, send a CS signla to the appropriatew slave to select them for data transmission.
+
+4. We set the baud rate prescalar to SPI_BaudRatePrescaler_8 (uint16_t(0x0010)). The SPI clock speed is 3MHz.
+
+5. A slave does not need to be configured to communicate with the master. We would want to be able to do on-the-fly changes in transmission speed so we can match the speeds of a conntected slave. If we have a system with multiple slaves, we would have to do on the fly changes when swtiching slaves.
+
+6. I learned about how the SPI transmission process works, and how each connection matters in the transaction. I had difficulties writing the f3d_gyro_write function as I was confused as to what bit value we needed to send to the slave 
+to signal write mode. I also had some difficulties getting the math worked out for calculating a difference value for negative gyro positions. 
+
+

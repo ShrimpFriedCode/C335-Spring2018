@@ -1,6 +1,10 @@
 /* f3d_gyro.h */
 
 /* Code: */
+
+//Ethan Anderson (etmander)
+//2/15/2018
+
 #include <stm32f30x.h>
 
 #define L3G_Sensitivity_250dps   (float) 114.285f

@@ -1,3 +1,7 @@
+
+//Ethan Anderson (etmander)
+//2/15/2018
+
 #include <f3d_gyro.h>
 #include <stm32f30x.h>
 void f3d_gyro_interface_init() {
@@ -79,7 +83,7 @@ void f3d_gyro_interface_init() {
   GPIO_Init(GPIOE, &GPIO_InitStructure);
   GPIO_SetBits(GPIOE, GPIO_Pin_3); 
 
-  GYRO_CS_HIGH();
+  GYRO_CS_HIGH();//set cs high
 }
 
 //the init function to be called in your main.c
@@ -157,7 +161,7 @@ void f3d_gyro_write(uint8_t* pBuffer, uint8_t WriteAddr, uint16_t NumByteToWrite
 
   while(NumByteToWrite > 0x00) {
   //WE are now sending dummy data so we can read the valuable!
-  //remember we must write to read!
+ 
   //putting the information in the buffer
 	f3d_gyro_sendbyte(((uint8_t) *pBuffer));
 	NumByteToWrite--;
