@@ -316,13 +316,13 @@ static void f3d_lcd_writeCmd(uint8_t c) {
   LcdWrite(LCD_C,&c,1);
 }
 
-void f3d_lcd_fillScreen(uint16_t color) {
-  uint8_t x,y;
+void f3d_lcd_fillScreen2(uint16_t color) {
+  uint8_t y;
+  uint16_t x[ST7735_width];
+  for (y = 0; y < ST7735_width; y++) x[y] = color;
   f3d_lcd_setAddrWindow (0,0,ST7735_width-1,ST7735_height-1,MADCTLGRAPHICS);
-  for (x=0;x<ST7735_width;x++) {
-    for (y=0;y<ST7735_height; y++) {
-      f3d_lcd_pushColor(&color,1);
-    }
+  for (y=0;y<ST7735_height; y++) {
+    f3d_lcd_pushColor(x,ST7735_width);
   }
 }
 

@@ -22,7 +22,7 @@
 int main(void) {
   // If you have your inits set up, this should turn your LCD screen red
   f3d_lcd_init();
-  f3d_lcd_fillScreen(BLACK);
+  f3d_lcd_fillScreen2(BLACK);
   f3d_uart_init();
   f3d_gyro_init();
 
@@ -43,12 +43,22 @@ int main(void) {
   char c2[10];
   char c3[10];
 
+  int storedValX = 0;
+  int storedValY = 0;
+  int storedValZ = 0;
+
+  int valDiff = 0;
+
   while(1){
-	delay(50); 
+
+	delay(50);
+
+	
+	
 	f3d_gyro_getdata(tmp);
 	
 	x = round(tmp[0]);
-	y = round(tmp[1]);
+	y = (round(tmp[1]));
 	z = round(tmp[2]);
 
 	sprintf(c1, "%d", x);
@@ -66,7 +76,79 @@ int main(void) {
 	f3d_lcd_drawString(15, 0, c1, WHITE, BLACK);
 	f3d_lcd_drawString(15, 10, c2, WHITE, BLACK);
 	f3d_lcd_drawString(15, 20, c3, WHITE, BLACK);	
+
+	int xg = x - 437;
+	int yg = y + 569;
+	int zg = z - 380;
+
+	int j;
+	int iter;
+
+	for(j = 0; j < 10; j++){
+	for(iter = 0; iter < xg; iter++){
+
+		f3d_lcd_drawPixel(j, 158 - iter, RED);
 	
+	}
+	}
+	
+
+	valDiff = storedValX - xg;
+
+	if(valDiff > 0){
+
+	for(j = 0; j < 10; j++){
+		for(iter = xg; storedValX - iter > 0 ; iter++){
+			f3d_lcd_drawPixel(j, 158 - iter, BLACK);
+		}
+	}
+	}
+	
+	storedValX = xg;
+
+       for(j = 0; j < 10; j++){
+        for(iter = 0; iter < yg; iter++){
+
+                f3d_lcd_drawPixel(j+20, 158 - iter, YELLOW);
+
+        }
+        }
+
+
+        valDiff = storedValY - yg;
+
+        if(valDiff > 0){
+
+        for(j = 0; j < 10; j++){
+                for(iter = yg; iter < storedValY; iter++){
+                        f3d_lcd_drawPixel(j+20, 158 - iter, BLACK);
+                }
+        }
+        }
+        
+        storedValY = yg;
+	
+       for(j = 0; j < 10; j++){
+        for(iter = 0; iter < zg; iter++){
+
+                f3d_lcd_drawPixel(j+40, 158 - iter, BLUE);
+
+        }
+        }
+
+
+        valDiff = storedValZ - zg;
+
+        if(valDiff > 0){
+
+        for(j = 0; j < 10; j++){
+                for(iter = zg; iter < storedValZ; iter++){
+                        f3d_lcd_drawPixel(j+40, 158 - iter, BLACK);
+                }
+        }
+        }
+        
+        storedValZ = zg;
 
   }
 
