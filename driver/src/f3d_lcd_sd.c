@@ -33,6 +33,10 @@
  */
 
 /* Code: */
+
+//Ethan Anderson (etmander)
+//2/22/18
+
 #include <f3d_lcd_sd.h>
 #include <f3d_delay.h>
 #include <glcdfont.h>
@@ -48,11 +52,7 @@ void delay(int i) {//delay function to allow for the user to press the button re
 */
 
 void f3d_lcd_sd_interface_init(void) {
- /* vvvvvvvvvvv pin initialization for the LCD goes here vvvvvvvvvv*/ 
-  
-  
-  
-  
+ 
   /* ^^^^^^^^^^^ pin initialization for the LCD goes here ^^^^^^^^^^ */
  
   // Section 4.1 SPI2 configuration
@@ -72,7 +72,7 @@ void f3d_lcd_sd_interface_init(void) {
   SPI_RxFIFOThresholdConfig(SPI2, SPI_RxFIFOThreshold_QF);
   SPI_Cmd(SPI2, ENABLE);
   
-  //PB9
+  //PB9, initialize for out mode
   GPIO_InitTypeDef GPIO_InitStructure;
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
   GPIO_StructInit(&GPIO_InitStructure);
@@ -83,7 +83,7 @@ void f3d_lcd_sd_interface_init(void) {
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
 
-  //PB10
+  //PB10, out mode
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
   GPIO_StructInit(&GPIO_InitStructure);
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
@@ -93,7 +93,7 @@ void f3d_lcd_sd_interface_init(void) {
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
 
-  //PB12
+  //PB12, out mode
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
   GPIO_StructInit(&GPIO_InitStructure);
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;
@@ -104,7 +104,7 @@ void f3d_lcd_sd_interface_init(void) {
   GPIO_Init(GPIOB, &GPIO_InitStructure);
   GPIO_SetBits(GPIOB, GPIO_Pin_12);
 
-  //PB13
+  //PB13, AF 5
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
   GPIO_StructInit(&GPIO_InitStructure);
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
@@ -115,7 +115,7 @@ void f3d_lcd_sd_interface_init(void) {
   GPIO_Init(GPIOB,&GPIO_InitStructure);
   GPIO_PinAFConfig(GPIOB,13,GPIO_AF_5);
 
-  //PB14
+  //PB14, AF 5
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
   GPIO_StructInit(&GPIO_InitStructure);
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
@@ -126,7 +126,7 @@ void f3d_lcd_sd_interface_init(void) {
   GPIO_Init(GPIOB,&GPIO_InitStructure);
   GPIO_PinAFConfig(GPIOB,14,GPIO_AF_5);
 
-  //PB15
+  //PB15, AF 5
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
   GPIO_StructInit(&GPIO_InitStructure);
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_15;

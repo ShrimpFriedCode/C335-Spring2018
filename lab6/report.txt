@@ -1,0 +1,13 @@
+Ethan Anderson (etmander)
+
+1. printf debugging is helpful as you can easily see what data is being fed to a program, and how that data is being interpreted.
+
+2. spiReadWrite is called inside a higher level peripheral function because lcdWrite needs to send the data of what pixels need to be manipulated, and that data needs to be stored in the lcd's register. 
+
+3. LCD_CS_DEASSERT() deselects the LCD as the current SPI peripheral. This is impoertant because if we didn't deselect the LCD, we wouldn't be able to communicate with any other SPI device attached. 
+
+4. drawChar uses a for loop to draw each pixel of a char. in the loop, the value of the given character in gldfont.c is assigned to a var. The for loop reads this var (which is a byte of binary data), and if there is a one in the i, j position, a pixel is drawn at i, j.
+
+5. Honestly didnt have time to figure out salae. I'll pop by office hours next week to figure it out.
+
+6. I had difficulties figuring out how to realiably display a fluctuating graph without having shutter issues with the screen constantly redrawing. I was able to solve this by determining and comparing the size of our current graph vs the last displayed graph. If our current our current one was shorter, I redrew only the pixels that didn't represent our current graph's data, instead of redrawing the whole graph. 
