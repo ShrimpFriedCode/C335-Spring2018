@@ -1,0 +1,28 @@
+Ethan Anderson (etmader)
+
+Q1. The accelerometer/magnetometer has 14 pins, they are as follows:
+
+1. Vdd_IO
+2. SCL
+3. SDA
+4. INT2
+5. INT1
+6. C1
+7. GND
+8. Reversed
+9. DRDY
+10. Reversed
+11. Reversed
+12. SETP
+13. SETC
+14. Vdd
+
+Electrical Characteristics:
+
+Vdd required: 2.5V
+
+The accelerometer/magnetometer is sitting at the top right of the board.
+
+Q2. We need to write before we read because we need to apply settings to the device. The code below is doing just that; choosing and applying settings to the device to select what exactly is running on the chip and how. 
+
+Q3. these lines from the read function pull data from the register and assign/clean the raw data to a new array. 
