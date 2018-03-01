@@ -1,0 +1,9 @@
+Ethan Anderson (etmander)
+
+1. We were able to add the nunchuk without initializing anything because we are wired directly through i2c.
+
+2. The major difference is i2c1_read's reg code and nunchuk's i2c send data. This implies that when we are communicating with the nunchuk, we are not sending more that one bytes.
+
+3.jx responds to the stick's x, and jy to the stick's y. ax-az correspond the the accelorometer's 3 axes. c and Z respond the the c and z buttons.
+
+4. the code above is for reading the various states of the c and z buttons. it responds to every possible case and combination of the two buttons. 
