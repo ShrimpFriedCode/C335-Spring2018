@@ -26,3 +26,10 @@ The accelerometer/magnetometer is sitting at the top right of the board.
 Q2. We need to write before we read because we need to apply settings to the device. The code below is doing just that; choosing and applying settings to the device to select what exactly is running on the chip and how. 
 
 Q3. these lines from the read function pull data from the register and assign/clean the raw data to a new array. 
+
+Q4. It might be necessary to compensate for tilt as the magnetic field changes when you tilt the device, therefore changing what data the compass is recieving to be false. 
+
+Difficulties:
+
+I had a hard time figuring out how to map a range of numbers to another range, for the pitch/roll data. After fiddling with it I finally found an eqution that seemed to do the trick. I also 
+had a hard figuring out how to represent the compass on the lcd. I gues sI just wasn't thinking, since when I started on the project again it seemed simplier that before. I learned about range mapping (obviously), and how to process the raw data from the sensors on the board. I also figured out push color.

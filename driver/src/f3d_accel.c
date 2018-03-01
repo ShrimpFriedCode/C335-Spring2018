@@ -34,6 +34,9 @@
 
 /* Code: */
 
+//Ethan Anderson (etmander)
+//3/1/18
+
 #include <f3d_i2c.h>
 #include <f3d_accel.h>
 
