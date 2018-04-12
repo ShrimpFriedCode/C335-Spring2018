@@ -1,0 +1,16 @@
+Ethan Anderson
+4/12/2018
+
+1. the peripheral base address is significant as it points to the very begininng of the peripheral in the system memory, allowing us to interact with the device.
+
+2. It was necessary to enable incrementing as was donein the step as it properly syncs up the devices to the clock
+
+3. this line of code holds the function until DMA is no longer communicating data, so we don't get ahead of ourselves and fail to properly send commands
+
+4. For transfers less than 4 bytes, one should not use the xchng function as it wates space, as it sends multiple 16bit elements. With such a small transfer, you'll waste a lot of space if you use such a big function for a small ammount of data. 
+
+5.It is important for the DMA controller and audio player to work on different portions of the audiobuf for a number of reasons. Firstly, if you have to devices doing the same work, you are being ineffiecent and wasting program time/resources. Secondly, you could have issues where if both devices are on the same buffer, there could be latency in between buffers as the program has to begin processing a whole new buffer one after the other.
+
+6.I learned the importance of timing and how WAV files are communicated to the system, and how audio controllers handle music data.
+
+7. I had difficulties fully completing this lab as I did not have a lot of the prvious lab material done, making it difficult to progress. I got stuck implementing interrupts, and could not progess from there. 
