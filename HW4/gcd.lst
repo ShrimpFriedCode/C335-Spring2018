@@ -1,0 +1,21 @@
+
+gcd.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <gcd>:
+   0:	b4f0      	push	{r4, r5, r6, r7}
+   2:	4288      	cmp	r0, r1
+   4:	d004      	beq.n	10 <end>
+   6:	db01      	blt.n	c <lthan>
+   8:	1a40      	subs	r0, r0, r1
+   a:	e7fe      	b.n	0 <gcd>
+
+0000000c <lthan>:
+   c:	1a09      	subs	r1, r1, r0
+   e:	e7fe      	b.n	0 <gcd>
+
+00000010 <end>:
+  10:	bcf0      	pop	{r4, r5, r6, r7}
+  12:	4770      	bx	lr
