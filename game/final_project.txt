@@ -1,0 +1,14 @@
+DESCRIPTION:
+this game is basically a bad verison of the wooden labyrinth game, wherein the objective is to get a ball in a hole in the shortest time possible. 
+This game operates in a while loop that contations a switch statement for each major point in the game's operation: init, menu, setup. game. game over screen, high scores. We operate through this loop, staying in game until a conditional is met that takes us to the final screens. All menus are navigated using the user button. The game loop is basically adding the board's acceleration to the coords of a 'ball' color object to move it around the board. Before it graphically updates the lcd, we check to see if the ball has moved out of bounds. if so, we attatch the ball to closest on board point. We also check if the ball is in the goal after updating pos on the lcd. In this case, the time it took to get to the goal is recorded, and we move to the next game state. these next states simply display if you got a new high score, and then display the all time high score. 
+
+BREAKDOWN:
+I didn't a partner, so I worked through this solo. The task list I walked though is a follows:
+1.Get a ball to display
+2. move ball via accel data
+3. calculate wall collisions
+4. calculate goal collisions
+5. record HS
+6. loop through gamestates
+
+
